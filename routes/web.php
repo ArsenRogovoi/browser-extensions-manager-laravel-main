@@ -3,5 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('main');
+    $extensions = DB::select('select * from extensions');
+
+    return view('main', ['extensions' => $extensions]);
 });
