@@ -1,4 +1,5 @@
 <x-layout>
+    <img src="/storage/images/logo.svg" alt="">
     <div class="bg-amber-700">tailwind test</div>
 
     Extensions List
