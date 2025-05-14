@@ -1,5 +1,4 @@
 <x-layout>
-    <div class="bg-amber-700">tailwind test</div>
 
     Extensions List
 
