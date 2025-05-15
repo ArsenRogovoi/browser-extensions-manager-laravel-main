@@ -12,7 +12,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="flex flex-col items-center p-4 font-noto-sans bg-main h-[1500px] dark:text-neutral-300">
+<body class="flex flex-col items-center p-4 font-noto-sans bg-main dark:text-neutral-300">
     <header
         class="container p-2 flex justify-between items-center bg-neutral-0 rounded-lg shadow 
     inset-shadow-sm dark:bg-neutral-700">
@@ -39,6 +39,10 @@
         </button>
     </header>
     {{ $slot }}
+    <footer>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+    </footer>
 </body>
 
 </html>
