@@ -25,16 +25,30 @@
                         <div>
                             <h2 class="mb-1 text-neutral-900 text-lg font-bold dark:text-neutral-0">
                                 {{ $extension->name }}</h2>
-                            <p class="text-neutral-600 text-sm/tight dark:text-neutral-300 sm:text-base/tight">{{ $extension->description }}
+                            <p class="text-neutral-600 text-sm/tight dark:text-neutral-300 sm:text-base/tight">
+                                {{ $extension->description }}
                             </p>
                         </div>
                     </div>
-                    <div class="flex justify-between">
+                    <div class="flex justify-between items-center">
+                        {{-- delete extension button --}}
                         <button
-                            class="border border-neutral-300 rounded-4xl text-sm text-neutral-900 font-semibold px-3 py-1 bg-neutral-0 
-                            dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-0"
+                            class="border border-neutral-300 rounded-4xl text-sm text-neutral-900 font-semibold px-3 py-1 
+                            bg-neutral-0 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-0"
                             type="button">Remove</button>
-                        <input type="checkbox" name="" id="">
+                        {{-- enable/disable toggle switch --}}
+                        <label class="relative w-8 h-4 cursor-pointer">
+                            <input class="sr-only peer" type="checkbox" id="{{$extensions->id}}">
+                            <div
+                                class="w-full h-full bg-neutral-300 rounded-full ring-red-700 peer-checked:bg-red-700 
+                                peer-checked:ring-neutral-900 transition-colors duration-300 peer-focus-visible:ring-2 
+                                ">
+                            </div>
+                            <div
+                                class="absolute left-0.5 top-0.5 w-3 h-3 bg-white rounded-full transition-transform duration-300 
+                                peer-checked:translate-x-3.5">
+                            </div>
+                        </label>
                     </div>
                 </article>
             @endforeach
