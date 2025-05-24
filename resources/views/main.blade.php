@@ -18,8 +18,9 @@
         {{-- extensions grid start: --}}
         <div class="flex flex-col justify-center gap-2.5 mb-6">
             @foreach ($extensions as $extension)
+                {{-- extension card start: --}}
                 <article
-                    class="p-3 border border-neutral-300 rounded-2xl bg-neutral-0 dark:bg-neutral-700 dark:border-neutral-600">
+                    class="p-3 border border-neutral-300 rounded-2xl bg-neutral-0 dark:bg-neutral-800 dark:border-neutral-600">
                     <div class="flex items-start gap-3 mb-4">
                         <img src="{{ $extension->logo }}" alt="devlens logo">
                         <div>
@@ -38,19 +39,21 @@
                             type="button">Remove</button>
                         {{-- enable/disable toggle switch --}}
                         <label class="relative w-8 h-4 cursor-pointer">
-                            <input class="sr-only peer" type="checkbox" id="{{$extensions->id}}">
+                            <input class="sr-only peer js-toggle-ext" type="checkbox" data-id="{{ $extension->id }}"
+                                @checked($extension->is_active)>
                             <div
                                 class="w-full h-full bg-neutral-300 rounded-full ring-red-700 peer-checked:bg-red-700 
                                 peer-checked:ring-neutral-900 transition-colors duration-300 peer-focus-visible:ring-2 
-                                ">
+                                dark:bg-neutral-500">
                             </div>
                             <div
-                                class="absolute left-0.5 top-0.5 w-3 h-3 bg-white rounded-full transition-transform duration-300 
-                                peer-checked:translate-x-3.5">
+                                class="absolute left-0.5 top-1/2 w-3 h-3 bg-white rounded-full transition-transform duration-300 
+                                peer-checked:translate-x-3.5 -translate-y-1/2">
                             </div>
                         </label>
                     </div>
                 </article>
+                {{-- extension card end --}}
             @endforeach
         </div>
         {{-- extensions grid end --}}
