@@ -26,7 +26,7 @@ Route::patch('/extensions/{id}', function (string $id, Request $request) {
 
         return response()->json([
             'success' => $isExtExist ? true : false,
-            'message' => $isExtExist ? 'No changes applied' : "Extensions with ID: $id does not exist."
+            'message' => $isExtExist ? 'No changes applied.' : "Extensions with ID: $id does not exist."
         ], $isExtExist ? 200 : 404);
     }
 

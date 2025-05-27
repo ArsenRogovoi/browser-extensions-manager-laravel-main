@@ -15,8 +15,8 @@
 
 <body class="flex flex-col items-center p-4 font-noto-sans bg-main dark:text-neutral-300">
     <header
-        class="container p-2 flex justify-between items-center bg-neutral-0 rounded-lg shadow 
-    inset-shadow-sm dark:bg-neutral-700">
+        class="container p-2 flex justify-between items-center bg-neutral-0 rounded-2xl shadow 
+    inset-shadow-sm dark:bg-neutral-800">
         <a href="/">
             {{-- Extensions logo: --}}
             <svg xmlns="http://www.w3.org/2000/svg" width="179" height="41" fill="none" viewBox="0 0 179 41">
@@ -35,7 +35,10 @@
                 </defs>
             </svg>
         </a>
-        <button class="bg-neutral-300/40 p-3 rounded-xl shadow dark:bg-neutral-600/40" id="theme-toggle-btn" type="button">
+        <button
+            class="bg-neutral-300/40 hover:bg-neutral-400/40 p-3 rounded-xl shadow cursor-pointer dark:bg-neutral-700 
+            hover:dark:bg-neutral-600 focus-visible:outline-red-400 focus-visible:outline-2 focus-visible:outline-offset-1"
+            id="theme-toggle-btn" type="button">
             <img src="/storage/images/icon-moon.svg" alt="moon icon" id="theme-toggle-btn-icon">
         </button>
     </header>
