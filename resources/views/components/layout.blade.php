@@ -43,9 +43,9 @@
         </button>
     </header>
     {{ $slot }}
-    <footer>
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-        Coded by <a href="#">Your Name Here</a>.
+    <footer class="text-center">
+        Challenge by <a class="text-red-700 font-semibold hover:underline" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        Coded by <a class="text-red-700 font-semibold hover:underline" href="https://github.com/ArsenRogovoi">Arsen Rogovoi</a>.
     </footer>
 </body>
 
