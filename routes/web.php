@@ -4,10 +4,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    $extensions = DB::select('select * from extensions');
+Route::get('/{isActive?}', function (?string $isActive = null) {
+    if ($isActive === 'active') {
+        $extensions = DB::table('extensions')->where('is_active', true)->get();
+    } else if ($isActive === 'inactive') {
+        $extensions = DB::table('extensions')->where('is_active', false)->get();
+    } else {
+        $extensions = DB::select('select * from extensions');
+    }
 
-    return view('main', ['extensions' => $extensions]);
+    return view('main', [
+        'extensions' => $extensions,
+        'isActive' => $isActive
+    ]);
 });
 
 Route::patch('/extensions/{id}', function (string $id, Request $request) {

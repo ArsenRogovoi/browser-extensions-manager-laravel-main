@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="flex flex-col items-center p-4 font-noto-sans bg-main dark:text-neutral-300">
+<body class="min-h-[100vh] flex flex-col items-center p-4 font-noto-sans bg-main dark:text-neutral-300">
     <header
         class="container p-2 flex justify-between items-center bg-neutral-0 rounded-2xl shadow 
     inset-shadow-sm dark:bg-neutral-800">

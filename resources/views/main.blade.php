@@ -7,26 +7,59 @@
             {{-- filter menu start: --}}
             <ul class="flex justify-center gap-2 mb-6 md:mt-8 md:mb-4">
                 <li>
-                    <a class="inline-block border rounded-4xl px-4 py-1 border-red-700 bg-red-700 text-white hover:opacity-80 
-                    dark:font-semibold dark:text-neutral-800 dark:border-neutral-800 dark:hover:opacity-100
-                    focus-visible:outline-red-400 focus-visible:outline-2 focus-visible:outline-offset-2"
-                        href="#">
+                    <a @class([
+                        'inline-block',
+                        'border',
+                        'rounded-4xl',
+                        'px-4',
+                        'py-1',
+                        // classes when tab active
+                        'border-red-700 bg-red-700 text-white hover:opacity-80 dark:font-semibold dark:text-neutral-800 
+                        dark:border-neutral-800 dark:hover:opacity-100 focus-visible:outline-red-400 focus-visible:outline-2 
+                        focus-visible:outline-offset-2' => $isActive === null,
+                        // classes when tab inactive
+                        'border-neutral-200 bg-neutral-0 hover:opacity-70 dark:bg-neutral-700 dark:border-neutral-600 
+                        dark:hover:bg-neutral-600 dark:hover:text-neutral-0 dark:hover:opacity-90 focus-visible:outline-red-400 
+                        focus-visible:outline-2 focus-visible:outline-offset-2' => $isActive !== null])
+                        href="/">
                         All
                     </a>
                 </li>
                 <li>
-                    <a class="inline-block border rounded-4xl px-4 py-1 border-neutral-200 bg-neutral-0 hover:opacity-70 dark:bg-neutral-700 
-                    dark:border-neutral-600 dark:hover:bg-neutral-600 dark:hover:text-neutral-0 dark:hover:opacity-90
-                    focus-visible:outline-red-400 focus-visible:outline-2 focus-visible:outline-offset-2"
-                        href="#">
+                    <a @class([
+                        'inline-block',
+                        'border',
+                        'rounded-4xl',
+                        'px-4',
+                        'py-1',
+                        // classes when tab active
+                        'border-red-700 bg-red-700 text-white hover:opacity-80 dark:font-semibold dark:text-neutral-800 
+                        dark:border-neutral-800 dark:hover:opacity-100 focus-visible:outline-red-400 focus-visible:outline-2 
+                        focus-visible:outline-offset-2' => $isActive === 'active',
+                        // classes when tab inactive
+                        'border-neutral-200 bg-neutral-0 hover:opacity-70 dark:bg-neutral-700 dark:border-neutral-600 
+                        dark:hover:bg-neutral-600 dark:hover:text-neutral-0 dark:hover:opacity-90 focus-visible:outline-red-400 
+                        focus-visible:outline-2 focus-visible:outline-offset-2' => $isActive !== 'active'])
+                        href="/active">
                         Active
                     </a>
                 </li>
                 <li>
-                    <a class="inline-block border rounded-4xl px-4 py-1 border-neutral-200 bg-neutral-0 hover:opacity-70 dark:bg-neutral-700 
-                    dark:border-neutral-600 dark:hover:bg-neutral-600 dark:hover:text-neutral-0 dark:hover:opacity-90
-                    focus-visible:outline-red-400 focus-visible:outline-2 focus-visible:outline-offset-2"
-                        href="">
+                    <a @class([
+                        'inline-block',
+                        'border',
+                        'rounded-4xl',
+                        'px-4',
+                        'py-1',
+                        // classes when tab active
+                        'border-red-700 bg-red-700 text-white hover:opacity-80 dark:font-semibold dark:text-neutral-800 
+                        dark:border-neutral-800 dark:hover:opacity-100 focus-visible:outline-red-400 focus-visible:outline-2 
+                        focus-visible:outline-offset-2' => $isActive === 'inactive',
+                        // classes when tab inactive
+                        'border-neutral-200 bg-neutral-0 hover:opacity-70 dark:bg-neutral-700 dark:border-neutral-600 
+                        dark:hover:bg-neutral-600 dark:hover:text-neutral-0 dark:hover:opacity-90 focus-visible:outline-red-400 
+                        focus-visible:outline-2 focus-visible:outline-offset-2' => $isActive !== 'inactive'])
+                        href="/inactive">
                         Inactive
                     </a>
                 </li>
@@ -34,7 +67,7 @@
             {{-- filter menu end --}}
         </div>
         {{-- extensions grid start: --}}
-        <div class="flex flex-col justify-center gap-2.5 mb-6 md:flex-row md:flex-wrap">
+        <div class="flex flex-col justify-center gap-2.5 mb-6 md:flex-row md:flex-wrap md:justify-start">
             @foreach ($extensions as $extension)
                 {{-- extension card start: --}}
                 <article
@@ -61,8 +94,7 @@
                             dark:hover:text-neutral-900 dark:hover:font-semibold"
                             type="button">Remove</button>
                         {{-- enable/disable toggle switch --}}
-                        <label
-                            class="relative w-8 h-4 cursor-pointer">
+                        <label class="relative w-8 h-4 cursor-pointer">
                             <input class="sr-only peer js-toggle-ext" type="checkbox" data-id="{{ $extension->id }}"
                                 @checked($extension->is_active)>
                             <div
